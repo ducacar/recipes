@@ -1,0 +1,105 @@
+<% layout ("layouts/boilerplate") %>
+
+
+    <div>
+      <a href="/recipes"></a>
+      <a class="btn btn-danger" href="/recipes">All recipes</a>
+    </div>
+    <div class="show-page-wrp ">
+    <div class="card-show">
+      <% if( currentUser && recipe.author.equals(currentUser._id)) { %>
+      <div class="show-btn">
+        <div class="show-edit-btn">
+          <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="post">
+            <button type="submit" class="btn btn-warning">Delete recipe</button>
+          </form>
+        </div>
+        <div class="show-edit-btn">
+          <a class="btn btn-success" href="/recipes/<%= recipe._id %>/edit">
+            Edit recipe</a
+          >
+        </div>
+      </div>
+      <% } %>
+      <div>
+        <p class="show-title"><%= recipe.title %></p>
+        <p class="show-auth">Submited by: <a href="/users/<%= recipe.author._id %>"> <%= recipe.author.username %></a></p>
+      </div>
+      <img src="<%= recipe.images[0].url %>" class="card-img" alt="..." />
+    </div>
+    <div class="show-card text-truncate">
+      <h2 class="text-center">Recipe</h2>
+      <h5>Ingredients:</h5>
+      <ul>
+          <% recipe.ingredients.split('\n').forEach(function(ingredient) { %>
+              <li><%= ingredient %></li>
+          <% }); %>
+      </ul>
+      <h5>Instructions: </h5>
+      <p class="p-show">
+        <%= recipe.instructions %>
+      </p>
+    </div>
+  
+  <div class="post-review-wrp">
+    <% if(currentUser) {%>
+    <div class="post-review">
+      <h2>Leave a review:</h2>
+      <form action="/recipes/<%= recipe._id %>/reviews#reviews" id="reviews" method="post" validate>
+        <div>
+          <label class="form-label" for="rating">Leave a rating (click on cookies)</label>
+          <div class="cake-rating" id="rating">
+            <% for (let i = 1; i <= 5; i++) { %>
+              <label for="rating<%= i %>">&#x1F370;</label>
+              <input type="radio" id="rating<%= i %>" name="review[rating]" value="<%= i %>" style="display: none;">
+            <% } %>
+          </div>
+          <div id="rating-indicator">Rating: </div>
+          
+        </div>
+        <div>
+          <label class="form-label" for="body">Review (maximum of 500 characters)</label>
+          <textarea name="review[body]" class="form-control" id="body" cols="15" rows="3" maxlength="500" required></textarea>
+          <div id="characterCount"></div>
+        </div>
+        <button class="btn btn-success">Submit</button>
+      </form>
+    </div>
+    <% } %>
+    <div class="reviews">
+      <% recipe.reviews.reverse().forEach((review) => { %>
+        <div class="review-wrp">
+          <div class="review-header">
+            <div class="rating">
+              <p>Rating:
+                <% for (let i = 1; i <= review.rating; i++) { %>
+                  &#x1F370;
+                <% } %>
+              </p>
+            </div>
+            <% if (currentUser && review.author.equals(currentUser._id)) { %>
+              <div class="delete-button">
+                <form action="/recipes/<%= recipe._id %>/reviews/<%= review._id %>?_method=DELETE#reviews" method="post">
+                  <button class="btn btn-sm btn-warning">Delete</button>
+                </form>
+              </div>
+            <% } %>
+          </div>
+          <div class="review-content">
+            <p class="p-show">Review: <%= review.body %></p>
+            <p>By <%= review.author.username %></p>
+          </div>
+         
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</div>
+
+<script src="/javascripts/characterCount.js"></script>
+<script src="/javascripts/ratingCookies.js"></script>
+
+
+
+
+

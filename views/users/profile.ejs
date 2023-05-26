@@ -1,0 +1,46 @@
+<% layout ('layouts/boilerplate') %>
+<div class="container">
+  <div>
+      
+    <a class="btn btn-danger" href="/recipes/new">Add new recipe</a>
+  </div>
+  <h1><%= user.username %>'s Profile</h1>
+  <div class="profile-look">
+    <h2 class="h2-profile"><%= user.username %>' Recipes:</h2>
+    <% recipes.forEach((recipe) => { %>
+    <div class="card  border-dark">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img
+            
+            src="<%= recipe.images[0].url %>"
+            alt="<%= recipe.title %> Image"
+          />
+        </div>
+        <div class="col-md-8">
+          <a class="li-profile" href="/recipes/<%= recipe._id %>">
+            <h4 class="card-title ms-3"><%= recipe.title %></h4>
+            <p class="card-text ms-3">Description: <%= recipe.description %></p>
+          </a>
+          <% if( currentUser && recipe.author.equals(currentUser._id)) { %>
+            <div class="show-btn">
+              <div class="show-edit-btn">
+                <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="post">
+                  <button type="submit" class="btn btn-warning">Delete recipe</button>
+                </form>
+              </div>
+              <div class="show-edit-btn">
+                <a class="btn btn-success" href="/recipes/<%= recipe._id %>/edit">
+                  Edit recipe</a
+                >
+              </div>
+            </div>
+            <% } %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <% }) %>
+</div>

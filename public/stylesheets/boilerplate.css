@@ -1,0 +1,420 @@
+body {
+  height: 100vh;
+  background-image: url("https://res.cloudinary.com/dgwtmmyl7/image/upload/v1683723568/kolaci2_hms2qy.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Arial Narrow", Arial, sans-serif;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* navbar */
+
+.nav-wrp {
+  margin: 2%;
+}
+
+nav {
+  background: white;
+  opacity: 0.8;
+  border-radius: 15px;
+}
+
+.navbar-brand {
+  color: rgb(184, 35, 35);
+  font-weight: 900;
+  font-size: 2rem !important;
+  letter-spacing: -2.5px;
+}
+
+.navbar-brand:hover {
+  color: rgb(184, 35, 35);
+}
+
+.nav-link {
+  color: black !important;
+  font-weight: 900;
+}
+
+.form-control-nav {
+  margin-right: 5px;
+  border-color: rgb(184, 35, 35) !important;
+}
+
+.form-control:focus,
+.form-control:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+::placeholder {
+  color: rgb(184, 35, 35) !important;
+}
+
+.btn-outline-danger {
+  color: rgb(184, 35, 35) !important;
+  border-color: rgb(184, 35, 35) !important;
+  margin-right: 25px;
+}
+
+.btn-outline-danger:hover {
+  color: black !important;
+}
+
+.btn-outline-danger:focus,
+.btn-outline-danger:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* home/about page */
+
+h3 {
+  background-color: antiquewhite;
+  padding: 2%;
+  color: rgb(184, 35, 35);
+}
+
+/* index page */
+
+header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3%;
+}
+
+h1 {
+  color: bisque;
+  font-style: italic;
+  text-align: end;
+  margin-right: 5%;
+}
+
+.btn-danger {
+  margin-left: 5%;
+  background-color: rgb(184, 35, 35) !important;
+  padding: 2% !important;
+  border-radius: 15px !important;
+  font-weight: 600 !important;
+  font-style: italic;
+}
+
+.btn-danger:hover {
+  background-color: white !important;
+  opacity: 0.8;
+  color: rgb(184, 35, 35) !important;
+  box-shadow: 20px 20px 50px rgb(184, 35, 35);
+}
+
+.btn-danger:focus,
+.btn-danger:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.card {
+  margin: 5% 10% 5%;
+}
+
+.card-body {
+  background-color: rgb(252, 243, 232);
+}
+
+.header-wrp {
+  text-align: center;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+}
+
+.paragraph-wrp {
+  height: 6em;
+}
+
+.btn-wrp {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* show page */
+
+.card-show {
+  background-color: antiquewhite;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-top: 10px;
+  background-size: 100vw auto;
+}
+
+.show-btn {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 1%;
+}
+
+.show-edit-btn {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.show-title {
+  margin: 0;
+  padding: 0.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(184, 35, 35);
+  font-weight: 800;
+  font-size: 25px;
+}
+
+.show-auth {
+  padding-left: 30%;
+  color: rgb(184, 35, 35) !important;
+}
+
+.card-img {
+  padding: 30%;
+  padding-top: 0%;
+  padding-bottom: 5%;
+}
+
+.show-card {
+  background-image: url(https://res.cloudinary.com/dgwtmmyl7/image/upload/v1684322496/lalalalala_g0i1qr.jpg);
+  background-size: 100vw auto;
+  background-position: center;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  padding: 2%;
+  padding-inline-start: 46%;
+  padding-inline-end: 19.5%;
+  color: rgb(196, 0, 0);
+}
+
+h5 {
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.p-show {
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.post-review-wrp {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  background-color: antiquewhite;
+  padding: 2%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: rgb(196, 0, 0);
+}
+
+.post-review {
+  width: 50%;
+  padding: 1%;
+}
+
+.reviews {
+  width: 50%;
+  padding: 1%;
+}
+
+.review-wrp {
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: #333;
+  color: antiquewhite;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rating {
+  flex-grow: 1;
+}
+
+.delete-button {
+  margin-left: 10px;
+}
+
+.review-content {
+  margin-top: 10px;
+}
+
+/* New page */
+
+.user-input-wrp {
+  position: relative;
+  width: 100%;
+}
+
+.form-control {
+  background-color: #333 !important;
+  border: 0;
+  border-radius: 4px;
+  padding: 16px 20px 16px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  width: 270px;
+  color: white !important;
+}
+
+.floating-label {
+  align-items: center;
+  background-color: rgb(184, 35, 35);
+  color: white;
+  border: 0;
+  border-radius: 4px;
+  text-align: left;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 16px;
+  position: absolute;
+  pointer-events: none;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px;
+  transition: 0.2s ease all;
+}
+
+input:focus ~ .floating-label,
+input:not(:focus):valid ~ .floating-label,
+textarea:focus ~ .floating-label,
+textarea:not(:focus):valid ~ .floating-label {
+  top: -8px;
+  font-size: 12px;
+  opacity: 1;
+}
+
+.file-input-label {
+  display: flex;
+  align-items: center;
+  background-color: #333;
+  color: rgb(184, 35, 35);
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.file-input-label span {
+  margin-right: 8px;
+}
+
+.file-input-label input[type="file"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#image-added-message {
+  background-color: #333;
+  color: rgb(184, 35, 35);
+  padding: 8px;
+  margin-top: 4px;
+  border-radius: 4px;
+}
+
+.input-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+#cancel-image-btn {
+  background-color: rgb(184, 35, 35);
+  position: absolute;
+  left: 285px;
+  display: none;
+  top: 30px;
+  border-radius: 15px;
+  border: none;
+}
+
+#cancel-image-btn:hover::after {
+  content: "Cancel Image";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  white-space: nowrap;
+  background-color: #f5f5f5;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+/* edit page */
+
+.edit-label {
+  align-items: center;
+  background-color: rgb(184, 35, 35);
+  color: white;
+  border: 0;
+  border-radius: 4px;
+  text-align: left;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* profile page */
+
+.profile-look {
+  padding: 15px;
+}
+
+h1 {
+  text-transform: capitalize;
+}
+
+.h2-profile {
+  text-transform: capitalize;
+  background-color: antiquewhite;
+  padding-left: 15px;
+  color: rgb(184, 35, 35);
+}
+
+.card-profile {
+  color: antiquewhite !important;
+}
+
+.li-profile {
+  text-decoration: none;
+  color: black;
+}
+
+.li-profile:hover {
+  color: rgb(184, 35, 35);
+}
+
+/* footer */
+
+.footer-wrp {
+  margin: 2%;
+}
+
+footer {
+  background: white;
+  opacity: 0.8;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+span {
+  color: rgb(184, 35, 35);
+}

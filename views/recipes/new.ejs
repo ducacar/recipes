@@ -1,0 +1,64 @@
+<% layout ("layouts/boilerplate") %>
+<main class="container">
+  <div class="row">
+    <div>
+      <a class="btn btn-warning" href="/recipes">Back</a>
+    </div>
+    <h1>New Recipe</h1>
+    <div class="col-6 offset-3">
+      <form
+        action="/recipes"
+        method="post"
+        enctype="multipart/form-data"
+        validate
+      >
+      <div class="user-input-wrp">
+        <input class="form-control" type="text" id="title" name="recipe[title]" required maxlength="26" />
+        <label class="floating-label" for="title">Title</label>
+      </div>
+      
+      <div class="user-input-wrp">
+        <textarea class="form-control" rows="2" id="description" name="recipe[description]" required maxlength="150"></textarea>
+        <label class="floating-label" for="description">Short description (up to 150 characters)</label>
+        
+      </div>
+      
+      <div class="user-input-wrp">
+        <textarea class="form-control" id="ingredients" name="recipe[ingredients]" required maxlength="1000"></textarea>
+        <label class="floating-label" for="ingredients">Ingredients. Enter each ingredient on a new line.</label>
+      </div>
+      
+      <div class="user-input-wrp">
+        <textarea class="form-control" type="text" id="instructions" name="recipe[instructions]" required maxlength="5000"></textarea>
+        <label class="floating-label" for="instructions">Instructions. Provide step-by-step instructions.</label>
+        
+      </div>
+        
+      <div class="user-input-wrp">
+        <label for="image" class="file-input-label">
+          <span>Choose Image (jpeg, png, jpg)</span>
+          <div class="input-wrapper">
+            <input
+              class="form-control"
+              type="file"
+              id="image"
+              name="image"
+              required
+            />
+            <button id="cancel-image-btn" style="display: none">
+              X
+            </button>
+          </div>
+        </label>
+        <p id="image-added-message" style="display: none"></p>
+      </div>
+      <div class="add-user-btn">
+        <button class="btn btn-danger mt-3">Add Recipe</button>
+      </div>
+      
+      </form>
+    </div>
+  </div>
+</main>
+<script src="/javascripts/addImage.js"></script>
+

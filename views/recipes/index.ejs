@@ -1,0 +1,36 @@
+<% layout ("layouts/boilerplate") %>
+<main class="container">
+  <header>
+    <div class="header-sign">
+      <h1>Let me eat cake!</h1>
+    </div>
+    <% if (currentUser)  {%>
+    <div>
+      
+      <a class="btn btn-danger" href="/recipes/new">Add new recipe</a>
+    </div>
+    <% } %>
+  </header>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <% for (let i = recipes.length - 1; i >= 0; i--) { %>
+      <div class="col">
+        <div class="card">
+          <img class="card-img-top" src="<%= recipes[i].images[0].url %>" alt="" />
+          <div class="card-body">
+            <div class="header-wrp">
+              <h4 class="card-header"><%= recipes[i].title %></h4>
+            </div>
+            <div class="paragraph-wrp">
+              <p class="card-body"><%= recipes[i].description %></p>
+            </div>
+            <div class="btn-wrp">
+              <a class="btn btn-outline-danger" href="/recipes/<%= recipes[i]._id %>">View</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% } %>
+  </div>
+  
+</main>
+
