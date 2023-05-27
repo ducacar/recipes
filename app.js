@@ -15,7 +15,7 @@ const User = require("./models/user");
 const mongoSanitize = require("express-mongo-sanitize");
 const helmet = require('helmet');
 const MongoStore = require('connect-mongo');
-const dbUrl = process.env.DB_URL;
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/CRUD';
 
 const app = express();
 
@@ -90,11 +90,13 @@ app.use(
 
 // COOKIES
 
+const secret = process.env.Secret || 'LzIthh07LZ'
+
 const store = MongoStore.create({
   mongoUrl: dbUrl,
   touchAfter: 24 * 60 * 60,
   crypto: {
-      secret: 'LzIthh07LZ'
+      secret: secret
   }
 });
 
@@ -105,7 +107,7 @@ store.on("error", function(e) {
 const sessionConfig = {
   store,
   name: "ducinikolaci",
-  secret: "LzIthh07LZ",
+  secret: secret,
   resave: false,
   saveUninitialized: true,
   cookie: {
