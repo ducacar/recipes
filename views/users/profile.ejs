@@ -8,18 +8,18 @@
   <div class="profile-look">
     <h2 class="h2-profile"><%= user.username %>' Recipes:</h2>
     <% recipes.forEach((recipe) => { %>
-    <div class="card  border-dark">
+    <div class="card border-dark">
       <div class="row g-0">
         <div class="col-md-4">
           <img
-            
+          class="img-fluid rounded-start"
             src="<%= recipe.images[0].url %>"
             alt="<%= recipe.title %> Image"
           />
         </div>
         <div class="col-md-8">
           <a class="li-profile" href="/recipes/<%= recipe._id %>">
-            <h4 class="card-title ms-3"><%= recipe.title %></h4>
+            <h4 class="card-title ms-3 mt-3"><%= recipe.title %></h4>
             <p class="card-text ms-3">Description: <%= recipe.description %></p>
           </a>
           <% if( currentUser && recipe.author.equals(currentUser._id)) { %>

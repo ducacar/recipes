@@ -1,4 +1,4 @@
-// rating.js
+
 function selectRating(rating) {
   const ratingIndicator = document.getElementById('rating-indicator');
   
@@ -16,7 +16,7 @@ function selectRating(rating) {
   selectedRadioButton.checked = true;
 }
 
-// Bind the event listeners to the labels
+
 const labels = document.querySelectorAll('.cake-rating label');
 labels.forEach((label, index) => {
   label.addEventListener('click', () => {
